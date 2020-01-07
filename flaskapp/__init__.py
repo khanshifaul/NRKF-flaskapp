@@ -12,6 +12,8 @@ migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+login_manager.category = 'info'
+
 from flaskapp import auth
 from flaskapp import public
 app.register_blueprint(public.bp)

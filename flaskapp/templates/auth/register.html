@@ -63,8 +63,8 @@
         {{form.confirm_password(placeholder="Repeat Password")}}
         {% endif%}
 
-        {{form.submit(placeholder="Login")}}
-        <a href="{{url_for('public.help')}}">Forgotten Password ?</a>
+        {{form.submit(placeholder="Register")}}
+        <a href="{{url_for('auth.login')}}">Login</a>
     </form>
 </div>
 {% endblock content %}

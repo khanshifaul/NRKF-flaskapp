@@ -10,28 +10,39 @@ auth = Blueprint('auth', __name__, url_prefix='/auth',
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('public.index'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user and bcrypt.check_password_hash(user.password, form.password.data):
-            login_user(user, remember=True)
-            return redirect(url_for('dbmanage'))
-        return redirect(url_for('login'))
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid Username or Password', category='error')
+            return redirect(url_for('login'))
+        login_user(user, remember=form.remember.data)
+        next_page = request.args.get('next')
+        return redirect(next_page) if next_page else redirect(url_for('public.index'))
     return render_template('login.html', title='Login', form=form)
 
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('public.index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f'registerd')
+        RegistrationForm.register(form)
+        flash(f'Registration Successful.')
+        return redirect(url_for('auth.login'))
     return render_template('register.html', title='Register', form=form)
 
 
 @auth.route('/logout')
+@login_required
 def logout():
-    login_user
+    return redirect(url_for('public.index'))
+
 
 @auth.route('/profile/<int:user_id>')
+@login_required
 def profile():
     return render_template('account.html', title='Account')
