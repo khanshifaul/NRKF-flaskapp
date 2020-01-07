@@ -8,21 +8,34 @@ auth = Blueprint('auth', __name__, url_prefix='/auth',
                  template_folder='templates/auth')
 
 
-@auth.route('/login', methods=['GET', 'POST'])
+@auth.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('public.index'))
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid Username or Password', category='error')
-            return redirect(url_for('auth.login'))
+    else:
+        form = LoginForm()
+        if form.validate_on_submit():
+            user = User.query.filter_by(username=form.username.data).first()
+            if user and bcrypt.check_password_hash(user.password, form.password.data):
+                login_user(user)
+                next_page = request.args.get('next')
+                return redirect(next_page) if next_page else redirect(url_for('public.index'))
+            else:
+                flash('Login Unsuccessful. Please check email and password', 'danger')
         else:
-            login_user(user)
-            next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('public.index'))
+            pass
     return render_template('login.html', title='Login', form=form)
+
+
+@auth.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('public.index'))
+
+
+@auth.route("/account")
+def account():
+    return render_template('account.html', title='Account')
 
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -35,15 +48,3 @@ def register():
         flash(f'Registration Successful.')
         return redirect(url_for('auth.login'))
     return render_template('register.html', title='Register', form=form)
-
-
-@auth.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('public.index'))
-
-
-@auth.route('/profile/<int:user_id>')
-@login_required
-def profile():
-    return render_template('account.html', title='Account')

@@ -35,12 +35,9 @@ class RegistrationForm(FlaskForm):
         if email is not None:
             raise ValidationError("A user with that email already exists")
 
-    def get_password_hash(self):
-        self.pw_hash = bcrypt.generate_password_hash(self.password.data)
-
     def register(self):
         u = User(username=self.username.data,
-                 email=self.email.data, password=bcrypt.generate_password_hash(self.password.data))
+                 email=self.email.data, password=bcrypt.generate_password_hash(self.password.data).decode('utf-8'))
         db.session.add(u)
         db.session.commit()
 

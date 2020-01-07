@@ -13,12 +13,15 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.category = 'info'
+login_manager.blueprint_login_views='login'
 
 
 from flaskapp import public
 app.register_blueprint(public.bp)
+
 from flaskapp import auth
 app.register_blueprint(auth.auth)
+app.add_url_rule('/login', endpoint='index')
 
 # def create_db():
 #     db.create_all()

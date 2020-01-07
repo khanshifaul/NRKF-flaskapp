@@ -51,11 +51,13 @@
             <a href="{{url_for('public.facilities')}}" class="btn">Facilities</a>
         </div>
         <div class="usrbtn">
-            {% if current_user.is_anonymous %}
-            <a href="{{url_for('auth.login')}}" class="btn"><i class="fas fa-sign-in-alt"></i></a>
-            {% else %}
-            <a href="{{url_for('auth.logout')}}" class="btn"><i class="fas fa-sign-out-alt"></i></a>
-            {% endif %}
+            {% if current_user.is_authenticated %}
+                <a class="btn" href="{{ url_for('auth.account') }}">Account</a>
+                <a class="btn" href="{{ url_for('auth.logout') }}">Logout</a>
+              {% else %}
+                <a class="btn" href="{{ url_for('auth.login') }}">Login</a>
+                <a class="btn" href="{{ url_for('auth.register') }}">Register</a>
+              {% endif %}
         </div>
     </nav>
 

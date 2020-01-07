@@ -1,7 +1,7 @@
 from flaskapp import app
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 
-bp = Blueprint('public', __name__, url_prefix='', template_folder='templates/public', static_folder='static')
+bp = Blueprint('public', __name__, url_prefix='', template_folder='templates/public')
 
 
 @bp.route('/')
