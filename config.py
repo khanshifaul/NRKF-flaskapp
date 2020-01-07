@@ -7,7 +7,9 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'BtIeWDcicUyTk8A1f7MvrMZRqH9k946d'
-    DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
+    SQLALCHEMY_ECHO = True
+
 
 
 class Production(Config):

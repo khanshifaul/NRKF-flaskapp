@@ -4,11 +4,11 @@ from flaskapp.forms import LoginForm, RegistrationForm
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, current_user, login_required
 
-bp = Blueprint('auth', __name__, url_prefix='/auth',
-               template_folder='templates/auth')
+auth = Blueprint('auth', __name__, url_prefix='/auth',
+                 template_folder='templates/auth')
 
 
-@bp.route('/login', methods=['GET', 'POST'])
+@auth.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -20,9 +20,18 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
-@bp.route('/register', methods=['GET', 'POST'])
+@auth.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         flash(f'registerd')
     return render_template('register.html', title='Register', form=form)
+
+
+@auth.route('/logout')
+def logout():
+    login_user
+
+@auth.route('/profile/<int:user_id>')
+def profile():
+    return render_template('account.html', title='Account')
