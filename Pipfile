@@ -1,0 +1,40 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+appdirs = "*"
+attrs = "*"
+bcrypt = "*"
+blinker = "*"
+cffi = "*"
+click = "*"
+flask = "*"
+flask-bcrypt = "*"
+flask-limiter = "*"
+flask-login = "*"
+flask-mail = "*"
+flask-sqlalchemy = "*"
+flask-wtf = "*"
+gunicorn = "*"
+itsdangerous = "*"
+jinja2 = "*"
+limits = "*"
+markupsafe = "*"
+pathspec = "*"
+pycparser = "*"
+pyperclip = "*"
+regex = "*"
+six = "*"
+sqlalchemy = "*"
+toml = "*"
+typed-ast = "*"
+werkzeug = "*"
+wtforms = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.7"
