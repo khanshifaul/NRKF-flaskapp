@@ -1,0 +1,149 @@
+.form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.form-content input, .form-content textarea {
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-content input[type="submit"], .form-content textarea[type="submit"] {
+  border: none;
+  color: #fafbfd;
+  background-color: #0b0bee;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-content input[type="submit"]:hover, .form-content textarea[type="submit"]:hover {
+  color: #141414;
+  background-color: #365af1;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 3fr;
+      grid-template-columns: 1fr 3fr 3fr;
+  -ms-grid-rows: 1fr 6fr;
+      grid-template-rows: 1fr 6fr;
+  grid-column-gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+div.side {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 0.5rem;
+  background-color: #365af1;
+}
+
+div.second-heading {
+  grid-column: 2/-1;
+  grid-row: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+div.second-heading h2 {
+  font-size: 2.4rem;
+}
+
+div.form-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  border: 1px solid #141414;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+div.form-container div.message {
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.6rem;
+  color: green;
+  background-color: rgba(0, 128, 0, 0.5);
+  padding: 0;
+  margin: .5rem 0;
+}
+
+div.preview {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  border: 1px solid #141414;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+form.form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+form.form-content .address {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0.2rem;
+}
+
+form.form-content input,
+form.form-content .address input {
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+form.form-content input[type="submit"],
+form.form-content .address input[type="submit"] {
+  border: none;
+  color: #fafbfd;
+  background-color: #0b0bee;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form.form-content input[type="submit"]:hover,
+form.form-content .address input[type="submit"]:hover {
+  color: #141414;
+  background-color: #365af1;
+}
+/*# sourceMappingURL=dbmanage.css.map */

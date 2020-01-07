@@ -4,6 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
+pylint = "*"
+python-language-server = "*"
 
 [packages]
 appdirs = "*"
@@ -34,7 +37,6 @@ toml = "*"
 typed-ast = "*"
 werkzeug = "*"
 wtforms = "*"
-autopep8 = "*"
 
 [requires]
 python_version = "3.7"

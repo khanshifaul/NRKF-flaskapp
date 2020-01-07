@@ -1,0 +1,31 @@
+.form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.form-content input, .form-content textarea {
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-content input[type="submit"], .form-content textarea[type="submit"] {
+  border: none;
+  color: #fafbfd;
+  background-color: #0b0bee;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-content input[type="submit"]:hover, .form-content textarea[type="submit"]:hover {
+  color: #141414;
+  background-color: #365af1;
+}
+/*# sourceMappingURL=form.css.map */

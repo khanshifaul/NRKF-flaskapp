@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+{% endblock css %}
+
+{% block content %}
+<div class="slide">
+    Image Slide
+</div>
+<div class="welcome">
+    Welcome Messages
+</div>
+<div class="principal">
+    principal's Messages
+</div>
+<div class="notices">
+    Latest News & Notices
+</div>
+{% endblock content %}

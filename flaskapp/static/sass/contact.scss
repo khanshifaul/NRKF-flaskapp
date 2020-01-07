@@ -1,0 +1,32 @@
+@import "variables";
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: .5rem 1fr .5rem;
+  grid-column-gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+div.contact-form {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    input,
+    textarea {
+      margin: 0.5rem 0 0 0;
+      padding: 0.2rem;
+      width: 25rem;
+      &[type="submit"] {
+        border: none;
+        width: 5rem;
+        color: $txt-wh;
+        background-color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.form-content input, .form-content textarea {
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-content input[type="submit"], .form-content textarea[type="submit"] {
+  border: none;
+  color: #fafbfd;
+  background-color: #0b0bee;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-content input[type="submit"]:hover, .form-content textarea[type="submit"]:hover {
+  color: #141414;
+  background-color: #365af1;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+  grid-column-gap: 0.5rem;
+}
+
+div.login {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+div.msg {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+div.msg p {
+  color: #f00;
+}
+/*# sourceMappingURL=login.css.map */

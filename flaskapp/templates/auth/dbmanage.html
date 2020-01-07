@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/dbmanage.css')}}">
+{% endblock css %}
+
+{% block content %}
+<div class="side">
+    <a href="javascript:void(0)" class="btn">Add New</a>
+    <a href="javascript:void(0)" class="btn">Update</a>
+    <a href="javascript:void(0)" class="btn">Search</a>
+</div>
+<div class="second-heading">
+    <h2>Database Management System</h2>
+</div>
+<div class="form-container">
+    <div class="message">
+        {% with messages = get_flashed_messages() %}
+        {%if messages%}
+        {%for message in messages%}
+        <span>{{message}}</span>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+    </div>
+    <form method="POST" action="" class="form-content">
+        {{ form.hidden_tag() }}
+        {% if form.studentname.errors %}
+        {{form.studentname()}}
+        <div>
+            {% for error in form.studentname.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.studentname(placeholder="Student's Name")}}
+        {% endif %}
+
+        {% if form.fathername.errors %}
+        {{form.fathername()}}
+        <div>
+            {% for error in form.fathername.errors %}
+            <span>
+                {{error}}
+            </span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.fathername(placeholder="Father's Name", type="Text")}}
+        {% endif%}
+        {{form.mothername(placeholder="Mother's Name")}}
+        {{form.dateofbirth(placeholder="Date of Birth")}}
+        {{form.sex(placeholder="Sex")}}
+        {{form.bcertno(placeholder="Birth Certificate No")}}
+        <div class="address">
+            {{form.district(placeholder="District")}}
+            {{form.thana(placeholder="Thana")}}
+            {{form.upazilla(placeholder="Upazilla")}}
+            {{form.village(placeholder="Village")}}
+            {{form.post(placeholder="Post Office")}}
+            {{form.postcode(placeholder="Postal Code")}}
+        </div>
+        {{form.submit(placeholder="ADD")}}
+    </form>
+</div>
+<div class="preview">
+    <p style="text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure ipsam
+        obcaecati, voluptatum dignissimos
+        nostrum sapiente, quaerat ducimus esse eum dolores natus adipisci nemo laboriosam similique recusandae
+        enim! Deleniti, doloribus nostrum!</p>
+</div>
+{% endblock content %}

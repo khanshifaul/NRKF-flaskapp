@@ -1,0 +1,81 @@
+@import "variables";
+@import "form";
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-rows: 1fr 6fr;
+  grid-column-gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+div.side {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  background-color: $primary-light;
+}
+div.second-heading {
+  grid-column: 2/-1;
+  grid-row: auto;
+  align-self: center;
+  justify-self: center;
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+div.form-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border: 1px solid $txt-bl;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  div.message {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.6rem;
+    color: green;
+    background-color: rgba(0, 128, 0, 0.5);
+    padding: 0;
+    margin: .5rem 0;
+  }
+}
+div.preview {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  border: 1px solid $txt-bl;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+form.form-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .address {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0.2rem;
+  }
+  input,
+  .address input {
+    width: 100%;
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+    &[type="submit"] {
+      border: none;
+      color: $txt-wh;
+      background-color: $primary;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: $txt-bl;
+        background-color: $primary-light;
+      }
+    }
+  }
+}

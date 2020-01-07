@@ -1,0 +1,26 @@
+@import "variables";
+@import "form";
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-column-gap: 0.5rem;
+}
+
+div.login {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+div.msg {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  p {
+    color: #f00;
+  }
+}

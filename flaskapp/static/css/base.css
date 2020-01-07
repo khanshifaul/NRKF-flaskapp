@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-size: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Bold", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.5fr auto auto 1fr;
+      grid-template-rows: 0.5fr auto auto 1fr;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+.header-content {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ff8800;
+  padding: 0 0.2rem;
+}
+
+.header-content div.left-header a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fafbfd;
+  text-decoration: none;
+}
+
+.header-content div.left-header a img {
+  margin: 0.2rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.header-content div.left-header a h1 {
+  margin: 1rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+
+.header-content div.right-header {
+  padding: 0.5rem;
+}
+
+.header-content div.right-header div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0.2rem;
+}
+
+.header-content div.right-header div:first-child a {
+  color: #141414;
+  text-decoration: none;
+}
+
+.header-content div.right-header div:first-child a:hover {
+  color: #fafbfd;
+}
+
+.header-content div.right-header .search input[name="search"] {
+  border: none;
+  font-size: 1.3rem;
+}
+
+.header-content div.right-header .search a {
+  color: #fafbfd;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+nav.menu {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ff8800;
+}
+
+main {
+  grid-column: 1/-1;
+}
+
+footer {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem;
+  color: #fafbfd;
+  background-color: #000066;
+}
+
+footer div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer div:first-child .srtinfo span {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+footer div:first-child .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer div:first-child .links p {
+  text-decoration: underline;
+  padding-bottom: 0.2rem;
+}
+
+footer div:first-child .links a {
+  color: #fafbfd;
+  text-decoration: none;
+}
+
+footer .copy-dev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 1rem;
+}
+
+footer .copy-dev .dev {
+  font-family: cursive;
+  font-style: oblique;
+}
+
+footer .copy-dev .dev a {
+  color: #fafbfd;
+  text-decoration: none;
+}
+
+.btn {
+  padding: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #fafbfd;
+}
+
+.btn:hover {
+  color: #141414;
+  background-color: #365af1;
+}
+
+.btn:disabled {
+  color: aliceblue;
+  background-color: #141414;
+}
+/*# sourceMappingURL=base.css.map */

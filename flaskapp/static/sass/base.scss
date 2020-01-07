@@ -1,0 +1,143 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-size: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Bold", sans-serif;
+  display: grid;
+  grid-template-rows: 0.5fr auto auto 1fr;
+  grid-template-columns: repeat(6, 1fr);
+}
+.header-content {
+  grid-column: 1/-1;
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: $secondary;
+  padding: 0 0.2rem;
+  div.left-header a {
+    display: flex;
+    align-items: center;
+    color: $txt-wh;
+    text-decoration: none;
+    img {
+      margin: 0.2rem;
+      width: 5rem;
+      height: 5rem;
+    }
+    h1 {
+      margin: 1rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+    }
+  }
+  div.right-header {
+    padding: 0.5rem;
+    div:first-child {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0.2rem;
+      a {
+        color: $txt-bl;
+        text-decoration: none;
+        &:hover {
+          color: $txt-wh;
+        }
+      }
+    }
+    .search {
+      input[name="search"] {
+        border: none;
+        font-size: 1.3rem;
+      }
+      a {
+        color: $txt-wh;
+        font-size: 1.3rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+nav.menu {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: $secondary;
+}
+
+main {
+  grid-column: 1/-1;
+}
+
+footer {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+  color: $txt-wh;
+  background-color: $primary-dark;
+  div:first-child {
+    display: flex;
+    justify-content: space-between;
+    .srtinfo span {
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      p {
+        text-decoration: underline;
+        padding-bottom: 0.2rem;
+      }
+      a {
+        color: $txt-wh;
+        text-decoration: none;
+      }
+    }
+  }
+  .copy-dev {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1rem;
+    .dev {
+      font-family: cursive;
+      font-style: oblique;
+      a {
+        color: $txt-wh;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: $txt-wh;
+  &:hover {
+    color: $txt-bl;
+    background-color: $primary-light;
+  }
+  &:disabled {
+    color: aliceblue;
+    background-color: $txt-bl;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% block title %}
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>NRKF DIGITAL SCHOOL</title>
+    {%endif%}
+    {% endblock title %}
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}" />
+    {% block css %}{% endblock css %}
+    <script src="{{url_for('static',filename='fontawesome/js/all.min.js')}}"></script>
+</head>
+
+<body>
+    <header class="header-content">
+        <div class="left-header">
+            <a href="{{url_for('public.index')}}">
+                <img class="logo" src='{{url_for("static",filename="img/logo.png")}}' />
+                <h1>NRKF DIGITAL SCHOOL</h1>
+            </a>
+        </div>
+        <div class="right-header">
+            <div>
+                <a href="{{url_for('public.notices')}}">Notices</a> |
+                <a href="{{url_for('public.contact')}}">Contact</a> |
+                <a href="{{url_for('public.help')}}">Help</a>
+            </div>
+            <div class="search">
+                <input type="text" name="search">
+                <a href="javascript:void(0)">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <div>
+            <a href="{{url_for('public.index')}}" class="btn active">Home</a>
+            <a href="{{url_for('public.about')}}" class="btn">About</a>
+            <a href="{{url_for('public.academic')}}" class="btn">Academic</a>
+            <a href="{{url_for('public.admission')}}" class="btn">Admission</a>
+            <a href="{{url_for('public.student')}}" class="btn">Student</a>
+            <a href="{{url_for('public.teacher')}}" class="btn">Teacher</a>
+            <a href="{{url_for('public.facilities')}}" class="btn">Facilities</a>
+        </div>
+        <div class="usrbtn">
+            <a href="{{url_for('auth.login')}}" class="btn"><i class="fas fa-sign-in-alt"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock content%}
+    </main>
+    <footer>
+        <div>
+            <div class="srtinfo">
+                <p>
+                    <span>NRKF DIGITAL SCHOOL</span> <br>
+                    REG NO. 123456 <br>
+                    <i class="fas fa-map-marked-alt icon"></i> Aguniatair, Sonatola 5826, Bogura <br>
+                    <i class="fas fa-mobile-alt icon"></i> 88 01700 123456 <br>
+                    <i class="fas fa-envelope icon"></i> mail@nrkf.digital.edu.bd
+                </p>
+            </div>
+            <div class="links">
+                <p>Important Links</p>
+                <a href="http://dpe.gov.bd/" target="_blank">Primary Education Board</a>
+                <a href="http://rajshahiboard.gov.bd/" target="blank">Rajshahi Education Board</a>
+                <a href="http://" target="blank">Shikkhok Batayon</a>
+                <a href="http://" target="blank">Kishor Batayon</a>
+            </div>
+        </div>
+
+        <div class="copy-dev">
+            <p class="copy">Copyright &copy; NRKF DIGITAL SCHOOL</p>
+            <p class="dev">Designed & Developed by <a href="#">KhanShifaul</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
