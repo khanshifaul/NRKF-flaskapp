@@ -17,10 +17,11 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid Username or Password', category='error')
-            return redirect(url_for('login'))
-        login_user(user, remember=form.remember.data)
-        next_page = request.args.get('next')
-        return redirect(next_page) if next_page else redirect(url_for('public.index'))
+            return redirect(url_for('auth.login'))
+        else:
+            login_user(user)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('public.index'))
     return render_template('login.html', title='Login', form=form)
 
 
@@ -37,8 +38,8 @@ def register():
 
 
 @auth.route('/logout')
-@login_required
 def logout():
+    logout_user()
     return redirect(url_for('public.index'))
 
 

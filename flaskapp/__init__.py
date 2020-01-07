@@ -14,9 +14,10 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.category = 'info'
 
-from flaskapp import auth
+
 from flaskapp import public
 app.register_blueprint(public.bp)
+from flaskapp import auth
 app.register_blueprint(auth.auth)
 
 # def create_db():

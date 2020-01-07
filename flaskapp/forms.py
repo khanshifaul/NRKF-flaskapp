@@ -37,7 +37,6 @@ class RegistrationForm(FlaskForm):
 
     def get_password_hash(self):
         self.pw_hash = bcrypt.generate_password_hash(self.password.data)
-        return pw_hash
 
     def register(self):
         u = User(username=self.username.data,
