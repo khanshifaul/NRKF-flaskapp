@@ -6,4 +6,4 @@ from flaskapp.models import User, Student
 #     return {'db': db, 'User': User, 'Student': Student}
 
 if __name__ == '__main__':
-    app.run
+    app.run()
