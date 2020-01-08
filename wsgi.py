@@ -5,5 +5,5 @@ from flaskapp.models import User, Student
 def make_shell_context():
     return {'db': db, 'User': User, 'Student': Student}
 
-# if __name__ == '__main__':
-#     app.run(host='127.0.0.1', port=8000)
+if __name__ == '__main__':
+    app.run
