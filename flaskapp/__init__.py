@@ -12,7 +12,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.login_message = ('Please log in to access this page.')
 
-def create_app(congig_class):
+def create_app(config_class=Config):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object('config.Development')
 
