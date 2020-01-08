@@ -11,9 +11,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+login_manager.login_view = 'auth.login'
 login_manager.category = 'info'
-login_manager.blueprint_login_views='login'
+login_manager.blueprint_login_views='auth.login'
 
 
 from flaskapp import public
