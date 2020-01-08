@@ -10,7 +10,7 @@ migrate = Migrate()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
-login_manager.login_message = _l('Please log in to access this page.')
+login_manager.login_message = ('Please log in to access this page.')
 
 def create_app(congig_class):
     app = Flask(__name__, instance_relative_config=True)
